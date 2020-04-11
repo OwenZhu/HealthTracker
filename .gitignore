@@ -235,3 +235,5 @@ pickle-email-*.html
 */xunit.xml
 
 */.env
+
+.vscode
