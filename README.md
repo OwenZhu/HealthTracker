@@ -1,3 +1,11 @@
-# Eureka Health Tracker
+# HealthTracker
 
-This is Owen's PY homework.
+Team Eureka:
+
+- Frank Gu
+
+- Hanwei Zhu
+
+- Jie He
+
+- Yifei Ma
