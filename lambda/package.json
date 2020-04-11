@@ -1,0 +1,49 @@
+{
+  "name": "eureka-health-tracker-lambda",
+  "version": "1.0.0",
+  "description": "Serverless for Eureka Health Tracker",
+  "main": "handler.js",
+  "scripts": {
+    "verify": "mocha -r ts-node/register **/*.spec.ts",
+    "pretest": "sls dynamodb install && sls dynamodb start",
+    "test": "set +e; npm run pretest; set -e; npm run verify",
+    "coverage": "npm run coverage-no-cleanup",
+    "lint": "tslint --project ."
+  },
+  "dependencies": {
+    "aws-sdk": "^2.453.0",
+    "axios": "^0.19.2",
+    "crypto-random-string": "^3.0.0",
+    "lambda-log": "^2.2.0",
+    "moment": "^2.24.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^0.1.3",
+    "@types/aws-lambda": "^8.10.17",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.18",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "md-to-pdf": "^2.7.1",
+    "mocha": "^6.1.4",
+    "mocha-junit-reporter": "^1.23.0",
+    "mocha-multi-reporters": "^1.1.7",
+    "nyc": "^14.1.1",
+    "serverless-dynamodb-local": "^0.2.37",
+    "serverless-offline": "^4.10.0",
+    "serverless-plugin-git-variables": "^3.3.2",
+    "serverless-webpack": "^5.3.0",
+    "source-map-support": "^0.5.12",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.2.0",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.2.4",
+    "webpack": "^4.29.0"
+  },
+  "author": "Frank Gu",
+  "license": "UNLICENSED"
+}
