@@ -1,29 +1,29 @@
-import { useContext, useEffect } from 'react';
-import { PageContext } from 'contexts/pageContext';
-import { getOrganisation as getOrganisationApi } from 'api';
-import * as Types from 'constants/actionTypes';
+import { useContext, useEffect } from "react";
+import { PageContext } from "contexts/pageContext";
+import { getOrganisation as getOrganisationApi } from "api";
+import * as Types from "constants/actionTypes";
 
 export const useOrganisation = () => {
   const { organisation } = useContext(PageContext);
 
-  /** Get latest data every 10 seconds */
+  /** Get latest data every 360 seconds */
   useEffect(() => {
     getOrganisation();
     setInterval(() => {
       getOrganisation();
-    }, 10000);
+    }, 360000);
   }, []);
 
   const getOrganisation = () => {
     getOrganisationApi()
-      .then(res => {
+      .then((res) => {
         organisation.dispatch({
           type: Types.GET_ORG_OVERVIEW_SUCCESS,
           data: res.data,
         });
       })
-      .catch(err => {
-        console.error('Get org overview error', { err });
+      .catch((err) => {
+        console.error("Get org overview error", { err });
       });
   };
 
