@@ -74,7 +74,7 @@ const EmptySpace = styled(Grid)`
   height: 10vh;
 `;
 
-const AuthPage: React.FC<AuthPageProps> = () => {
+const AuthPage: React.FC<AuthPageProps> = (props) => {
   const { signIn, signUp, error, user: userInfo } = useAuth();
   const [authOption, setAuthOption] = useState<string>(AUTH_PAGE_OPTIONS.LOGIN);
   const isLogin = authOption === AUTH_PAGE_OPTIONS.LOGIN;
@@ -87,6 +87,7 @@ const AuthPage: React.FC<AuthPageProps> = () => {
   });
 
   useEffect(() => {
+    setAuthOption(props.location.state);
     if (userInfo.name && !error.message) {
       history.push(RoutePath.dashboard);
     }
