@@ -6,7 +6,9 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import NotificationImportantIcon from "@material-ui/icons/NotificationImportant";
 
-import { IMAGE_DIR } from "constants/config";
+import { IMAGE_DIR, RoutePath } from "constants/config";
+import history from "historyConfig";
+
 import AustraliaOverview from "components/Dashboard/AustraliaOverview";
 import DailyOverview from "components/Dashboard/DailyOverview";
 import SentimentAnalysis from "components/Dashboard/SentimentAnalysis";
@@ -34,6 +36,9 @@ const ToolBar = styled(Toolbar)`
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+`;
+const Logo = styled.img`
+  cursor: pointer;
 `;
 const UpperRightContainer = styled.div`
   display: flex;
@@ -87,11 +92,19 @@ const OrgContainer = styled(Grid)`
   border-radius: 2%;
 `;
 const Dashboard: React.FC = () => {
+  const handleClickLogo = () => {
+    history.push(RoutePath.landingPage);
+  };
+
   return (
     <PageContainer>
       <NavBar color="transparent" id="navbar" isShadowVisible={false}>
         <ToolBar>
-          <img src={`${IMAGE_DIR}logoDashBoard.svg`} alt="logo" />
+          <Logo
+            src={`${IMAGE_DIR}logoDashBoard.svg`}
+            alt="logo"
+            onClick={handleClickLogo}
+          />
           <UpperRightContainer>
             <NotificationIcon fontSize="large" />
             <ProfileEntry>T</ProfileEntry>

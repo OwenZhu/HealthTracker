@@ -39,6 +39,7 @@ const FormContainer = styled(Paper)`
 `;
 const Logo = styled.img`
   margin-bottom: 1rem;
+  cursor: pointer;
 `;
 const TextInput = styled(TextField)`
   && {
@@ -117,11 +118,19 @@ const AuthPage: React.FC<AuthPageProps> = (props) => {
     }
   };
 
+  const handleClickLogo = () => {
+    history.push(RoutePath.landingPage);
+  };
+
   return (
     <PageContainer container justify="center" alignItems="center">
       <Grid item xs={8} md={6} lg={4}>
         <FormContainer>
-          <Logo src={`${IMAGE_DIR}logo.svg`} alt="logo" />
+          <Logo
+            src={`${IMAGE_DIR}logo.svg`}
+            alt="logo"
+            onClick={handleClickLogo}
+          />
 
           {/* TODO: add style */}
           {error.message}
