@@ -17,10 +17,10 @@ const OverseasTravel: React.FC = () => {
       <Title>Overseas travel</Title>
       <BarChart
         width={470}
-        height={250}
+        height={400}
         data={overseas}
         layout="vertical"
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+        margin={{ top: 5, right: 30, left: 40, bottom: 5 }}
       >
         <XAxis type="number" />
         <YAxis type="category" dataKey="country" />

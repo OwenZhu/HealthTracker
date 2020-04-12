@@ -59,20 +59,17 @@ const ProfileEntry = styled(Typography)`
   }
 `;
 const MainContent = styled(Grid)`
-  width: 100%;
-  height: 100%;
+  padding: 2rem 0;
   background: #f5f8ff;
-`;
-const LeftContainer = styled(Grid)`
-  height: calc(100% - 50px);
 `;
 const Sentiment = styled(Grid)``;
 const SurveyContainer = styled(Grid)`
-  height: calc(100% - 128px);
-  overflow: auto;
   padding: 2rem;
   background: #ffffff;
   border-radius: 2%;
+  && {
+    margin-top: 36px;
+  }
 `;
 const OverviewContainer = styled(Grid)`
   background: #ffffff;
@@ -85,7 +82,7 @@ const AUTitile = styled.div`
   font-weight: bold;
 `;
 const OrgContainer = styled(Grid)`
-  height: 330px;
+  height: 500px;
   background: #ffffff;
   border-radius: 2%;
 `;
@@ -102,10 +99,10 @@ const Dashboard: React.FC = () => {
         </ToolBar>
       </NavBar>
 
-      <MainContent container justify="space-around" alignItems="center">
-        <LeftContainer item container direction="column" xs={11} lg={7}>
+      <MainContent container justify="space-around">
+        <Grid item container md={11} lg={7}>
           {/* Australia Info */}
-          <div>
+          <Grid item xs={12}>
             <AUTitile>In Australia</AUTitile>
             <OverviewContainer container justify="space-around">
               <Grid item xs={11} lg={7}>
@@ -115,10 +112,16 @@ const Dashboard: React.FC = () => {
                 <DailyOverview />
               </Grid>
             </OverviewContainer>
-          </div>
+          </Grid>
 
           {/* Org Info */}
-          <Grid item container alignItems="flex-start" justify="space-between">
+          <Grid
+            item
+            xs={12}
+            container
+            alignItems="flex-start"
+            justify="space-between"
+          >
             <AUTitile>In Organisation</AUTitile>
             <Sentiment item xs={12}>
               <SentimentAnalysis />
@@ -130,8 +133,10 @@ const Dashboard: React.FC = () => {
               <WfhRate />
             </OrgContainer>
           </Grid>
-        </LeftContainer>
-        <SurveyContainer item xs={11} lg={4}>
+        </Grid>
+
+        {/* Survey form */}
+        <SurveyContainer item md={11} lg={4}>
           <SurveyForm />
         </SurveyContainer>
       </MainContent>

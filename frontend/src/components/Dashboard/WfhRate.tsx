@@ -47,12 +47,16 @@ const WfhRate: React.FC = () => {
         <WFOBlock />
         <div>Work from office</div>
       </AnnotationContaner>
-      <PieChart width={400} height={250}>
+      <PieChart
+        width={400}
+        height={400}
+        margin={{ top: 0, right: 0, bottom: 0, left: 80 }}
+      >
         <Pie
           isAnimationActive={false}
           dataKey="value"
           data={data}
-          outerRadius={80}
+          outerRadius={120}
           fill="#8884d8"
           label
         >
