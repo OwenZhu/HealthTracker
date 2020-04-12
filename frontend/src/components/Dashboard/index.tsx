@@ -94,7 +94,7 @@ const Dashboard: React.FC = () => {
           <img src={`${IMAGE_DIR}logoDashBoard.svg`} alt="logo" />
           <UpperRightContainer>
             <NotificationIcon fontSize="large" />
-            <ProfileEntry>J</ProfileEntry>
+            <ProfileEntry>T</ProfileEntry>
           </UpperRightContainer>
         </ToolBar>
       </NavBar>
