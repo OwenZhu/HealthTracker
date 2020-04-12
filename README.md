@@ -1,5 +1,7 @@
 # HealthTracker
 
+![logo](./docs/logo.jpg)
+
 HealthTracker is an interactive website that provides key statistics on physical and mental health of people in your organisation amid COVID-19, empowering employers and employees to make informed decisions on staff support and work arrangements.
 
 *This project was implemented during the Hackathon hosted by Australian Computer Society (ACS) #FlattenTheCurveHack*
