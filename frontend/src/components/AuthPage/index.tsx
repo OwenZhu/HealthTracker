@@ -87,11 +87,14 @@ const AuthPage: React.FC<AuthPageProps> = (props) => {
   });
 
   useEffect(() => {
-    setAuthOption(props.location.state);
     if (userInfo.name && !error.message) {
       history.push(RoutePath.dashboard);
     }
   }, [userInfo, error]);
+
+  useEffect(() => {
+    setAuthOption(props.location.state);
+  }, []);
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target && event.target.id) {
