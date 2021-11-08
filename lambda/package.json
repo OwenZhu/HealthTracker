@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.453.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.2",
     "crypto-random-string": "^3.0.0",
     "lambda-log": "^2.2.0",
     "moment": "^2.24.0",
